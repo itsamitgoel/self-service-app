@@ -214,9 +214,11 @@ public class SavingsMakeTransferFragment extends BaseFragment implements
 
     @Override
     public void showTransferredSuccessfully() {
-        Toast.makeText(getActivity(), getString(R.string.transferred_Successfully),
-                Toast.LENGTH_SHORT).show();
+      //  Toast.makeText(getActivity(), getString(R.string.transferred_Successfully),
+       //         Toast.LENGTH_SHORT).show();
+        Toaster.show(rootView, getString(R.string.transferred_Successfully));
         getActivity().getSupportFragmentManager().popBackStack();
+        Toaster.show(rootView, getString(R.string.transferred_Successfully));
     }
 
     @Override
