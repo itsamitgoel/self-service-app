@@ -120,18 +120,20 @@ public class LoanApplicationFragment extends BaseFragment implements LoanApplica
 
     @OnClick(R.id.btn_loan_submit)
     void onSubmitLoanApplication() {
-        if(Network.isConnected(getActivity())==true) {
+        if (Network.isConnected(getActivity()) == true) {
             LoansPayload loansPayload = new LoansPayload();
             loansPayload.setClientId(loanTemplate.getClientId());
             loansPayload.setLoanPurposeId(purposeId);
             loansPayload.setProductId(productId);
             loansPayload.setPrincipal(loanTemplate.getPrincipal());
             loansPayload.setLoanTermFrequency(loanTemplate.getTermFrequency());
-            loansPayload.setLoanTermFrequencyType(loanTemplate.getInterestRateFrequencyType().getId());
+            loansPayload.setLoanTermFrequencyType(loanTemplate.getInterestRateFrequencyType()
+                    .getId());
             loansPayload.setLoanType("individual");
             loansPayload.setNumberOfRepayments(loanTemplate.getNumberOfRepayments());
             loansPayload.setRepaymentEvery(loanTemplate.getRepaymentEvery());
-            loansPayload.setRepaymentFrequencyType(loanTemplate.getInterestRateFrequencyType().getId());
+            loansPayload.setRepaymentFrequencyType(loanTemplate.getInterestRateFrequencyType()
+                    .getId());
             loansPayload.setInterestRatePerPeriod(loanTemplate.getInterestRatePerPeriod());
             loansPayload.setExpectedDisbursementDate(disbursementDate);
             loansPayload.setSubmittedOnDate(submittedDate);
@@ -147,6 +149,7 @@ public class LoanApplicationFragment extends BaseFragment implements LoanApplica
 
             loanApplicationPresenter.createLoansAccount(loansPayload);
         }
+        
         else
             showError("failed to load template");
     }
