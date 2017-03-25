@@ -147,7 +147,9 @@ public class LoanApplicationFragment extends BaseFragment implements LoanApplica
                     loanTemplate.getInterestCalculationPeriodType().getId());
             loansPayload.setInterestType(loanTemplate.getInterestType().getId());
 
-            loanApplicationPresenter.createLoansAccount(loansPayload);}
+            loanApplicationPresenter.createLoansAccount(loansPayload);
+
+        }
 
         else
             showError("failed to load template");
