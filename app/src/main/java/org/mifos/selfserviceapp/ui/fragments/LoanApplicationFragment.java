@@ -149,8 +149,9 @@ public class LoanApplicationFragment extends BaseFragment implements LoanApplica
 
             loanApplicationPresenter.createLoansAccount(loansPayload);
 
-        } else
+        } else {
             showError("failed to load template");
+        }
     }
 
     public void inflateSubmissionDate() {
